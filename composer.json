@@ -1,6 +1,6 @@
 {
-    "name": "fof/doorman",
-    "description": "Create invite codes for users to sign up and be assigned to a group",
+    "name": "littlecxm/fof-doorman",
+    "description": "Create invite codes for users assigned to a group",
     "keywords": [
         "flarum"
     ],
@@ -43,7 +43,7 @@
     },
     "extra": {
         "flarum-extension": {
-            "title": "FoF Doorman",
+            "title": "FoF Doorman(Fork)",
             "category": "feature",
             "icon": {
                 "name": "fas fa-door-closed",

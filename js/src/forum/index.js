@@ -3,12 +3,12 @@ import { extend } from 'flarum/common/extend';
 import SignUpModal from 'flarum/forum/components/SignUpModal';
 import Stream from 'flarum/common/utils/Stream';
 
-app.initializers.add('fof-doorman', () => {
+app.initializers.add('littlecxm-fof-doorman', () => {
     extend(SignUpModal.prototype, 'oninit', function () {
         this.doorkey = Stream('');
     });
     extend(SignUpModal.prototype, 'fields', function (fields) {
-        const isOptional = JSON.parse(app.forum.data.attributes['fof-doorman.allowPublic']);
+        const isOptional = JSON.parse(app.forum.data.attributes['littlecxm-fof-doorman.allowPublic']);
         let placeholder = app.translator.trans('fof-doorman.forum.sign_up.doorman_placeholder');
         if (isOptional) {
             placeholder = app.translator.trans('fof-doorman.forum.sign_up.doorman_placeholder_optional');

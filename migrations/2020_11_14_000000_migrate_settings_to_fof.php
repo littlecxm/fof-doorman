@@ -22,7 +22,7 @@ return [
 
         foreach (['allowPublic'] as $setting) {
             if ($value = $settings->get($key = "reflar.doorman.$setting")) {
-                $settings->set("fof-doorman.$setting", $value);
+                $settings->set("littlecxm-fof-doorman.$setting", $value);
                 $settings->delete($key);
             }
         }
@@ -34,7 +34,7 @@ return [
         $settings = resolve('flarum.settings');
 
         foreach (['allowPublic'] as $setting) {
-            if ($value = $settings->get($key = "fof-doorman.$setting")) {
+            if ($value = $settings->get($key = "littlecxm-fof-doorman.$setting")) {
                 $settings->set("reflar.doorman.$setting", $value);
                 $settings->delete($key);
             }

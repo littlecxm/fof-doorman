@@ -16,7 +16,7 @@ export default class DoormanSettingsPage extends ExtensionPage {
         this.loading = false;
         this.switcherLoading = false;
         this.doorkeys = app.store.all('doorkeys');
-        this.isOptional = app.data.settings['fof-doorman.allowPublic'];
+        this.isOptional = app.data.settings['littlecxm-fof-doorman.allowPublic'];
 
         this.doorkey = {
             key: Stream(this.generateRandomKey()),
@@ -139,11 +139,11 @@ export default class DoormanSettingsPage extends ExtensionPage {
     toggleOptional() {
         this.switcherLoading = true;
         const settings = {
-            'fof-doorman.allowPublic': !this.isOptional,
+            'littlecxm-fof-doorman.allowPublic': !this.isOptional,
         };
         saveSettings(settings)
             .then(() => {
-                this.isOptional = JSON.parse(app.data.settings['fof-doorman.allowPublic']);
+                this.isOptional = JSON.parse(app.data.settings['littlecxm-fof-doorman.allowPublic']);
             })
             .catch(() => {})
             .then(() => {
