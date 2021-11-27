@@ -34,11 +34,11 @@ class AddValidatorRule
             function ($attribute, $value, $parameters) {
                 $doorkey = Doorkey::where('key', $value)->first();
 
-                // Allows the invitation key to be optional if the setting was enabled
-                $allow = json_decode($this->settings->get('fof-doorman.allowPublic'));
-                if ($allow && !$doorkey) {
-                    return;
-                }
+//                // Allows the invitation key to be optional if the setting was enabled
+//                $allow = json_decode($this->settings->get('fof-doorman.allowPublic'));
+//                if ($allow && !$doorkey) {
+//                    return;
+//                }
 
                 if ($doorkey !== null && ($doorkey->max_uses === 0 || $doorkey->uses < $doorkey->max_uses)) {
                     return true;
